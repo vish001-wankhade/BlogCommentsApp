@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @blog.body %>
+</p>
+
+<div class="container">
+    <h2 class="subtitle is-5"><strong><%= @blog.comments.count %></strong> Comments</h2>
+    <%= render @blog.comments %>
+    <div class="comment-form">
+        <hr />
+        <h3 class="subtitle is-3">Leave a comment</h3>
+         <%= render 'comments/form' %>
+    </div>
+</div>
+<br>
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>
+
+
